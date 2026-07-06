@@ -50,7 +50,7 @@ restaurante_id = motor.get("restaurante_id", 1)
 
 while True:
     print("\n======================================")
-    print("             HOST AI 2.1 - Sprint 5.2")
+    print("             HOST AI 2.1 - Sprint 5.3")
     print("======================================")
     print(f"📦 Artículos cargados : {len(motor['articulos'])}")
     print(f"🏢 Proveedores        : {len(motor['proveedores'])}")

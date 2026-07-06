@@ -3,6 +3,7 @@ from __future__ import annotations
 from prioridades import generar_prioridades, obtener_siguiente_accion, resumen_prioridades
 from dependencias import resumen_dependencias
 from motor_produccion import resumen_plan_produccion
+from planificador_produccion import resumen_horario_produccion
 
 
 def mostrar_siguiente_accion(restaurante_id: int = 1):
@@ -56,6 +57,15 @@ def mostrar_plan_inteligente(restaurante_id: int = 1):
     input("Pulsa ENTER para volver...")
 
 
+def mostrar_horario_inteligente(restaurante_id: int = 1):
+    hora = input("\nHora de inicio (vacío = 08:00): ").strip() or "08:00"
+    print()
+    print(resumen_horario_produccion(restaurante_id, hora_inicio=hora))
+    print("\nHost AI:")
+    print("Este es el primer horario basado en prioridades, tiempos activos/pasivos y tipo de elaboración.\n")
+    input("Pulsa ENTER para volver...")
+
+
 def menu_produccion_inteligente(restaurante_id: int = 1):
     while True:
         print("\n========== PRODUCCIÓN INTELIGENTE ==========")
@@ -63,6 +73,7 @@ def menu_produccion_inteligente(restaurante_id: int = 1):
         print("2. Ver prioridades de producción")
         print("3. Ver dependencias / producciones agrupables")
         print("4. Generar plan de producción inteligente")
+        print("5. Generar horario de producción inteligente")
         print("0. Volver")
 
         opcion = input("\n¿Qué quieres hacer? ").strip()
@@ -75,6 +86,8 @@ def menu_produccion_inteligente(restaurante_id: int = 1):
             mostrar_dependencias(restaurante_id)
         elif opcion == "4":
             mostrar_plan_inteligente(restaurante_id)
+        elif opcion == "5":
+            mostrar_horario_inteligente(restaurante_id)
         elif opcion == "0":
             break
         else:

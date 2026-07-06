@@ -36,6 +36,7 @@ from importadores_menu import menu_importadores
 from stock import menu_stock
 from costes import menu_costes
 from compras import menu_compras
+from produccion_inteligente import menu_produccion_inteligente
 from asistente import conversar_con_host_ai
 
 
@@ -49,7 +50,7 @@ restaurante_id = motor.get("restaurante_id", 1)
 
 while True:
     print("\n======================================")
-    print("             HOST AI 2.1 - Sprint 4.5")
+    print("             HOST AI 2.1 - Sprint 5.2")
     print("======================================")
     print(f"📦 Artículos cargados : {len(motor['articulos'])}")
     print(f"🏢 Proveedores        : {len(motor['proveedores'])}")
@@ -71,6 +72,7 @@ while True:
     print("13. Stock / Mercancía")
     print("14. Costes / Rentabilidad")
     print("15. Compras / Pedidos")
+    print("16. Producción Inteligente")
     print("0. Salir")
 
     opcion = input("\n¿Qué quieres hacer? ")
@@ -137,6 +139,9 @@ while True:
 
     elif opcion == "15":
         menu_compras(restaurante_id)
+
+    elif opcion == "16":
+        menu_produccion_inteligente(restaurante_id)
 
     elif opcion == "0":
         print("\nHost AI:")

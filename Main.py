@@ -141,7 +141,7 @@ while True:
         menu_compras(restaurante_id)
 
     elif opcion == "16":
-        menu_produccion_inteligente(restaurante_id)
+        menu_produccion_inteligente()
 
     elif opcion == "0":
         print("\nHost AI:")

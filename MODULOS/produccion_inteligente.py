@@ -1,94 +1,121 @@
+# -*- coding: utf-8 -*-
+"""
+Módulo de consola - Producción Inteligente
+Sprint 5.4: planificación por restricciones reales.
+"""
+
 from __future__ import annotations
 
-from prioridades import generar_prioridades, obtener_siguiente_accion, resumen_prioridades
-from dependencias import resumen_dependencias
-from motor_produccion import resumen_plan_produccion
-from planificador_produccion import resumen_horario_produccion
+
+def _pausa() -> None:
+    input("\nPulsa ENTER para continuar...")
 
 
-def mostrar_siguiente_accion(restaurante_id: int = 1):
-    accion = obtener_siguiente_accion(restaurante_id)
-
-    print("\n========== SIGUIENTE ACCIÓN RECOMENDADA ==========")
-
-    if accion is None:
-        print("\nNo hay tareas pendientes de producción.\n")
-        input("Pulsa ENTER para volver...")
-        return
-
-    print(f"\n👉 {accion.nombre}")
-    print(f"Evento    : {accion.evento or 'Sin evento'}")
-    print(f"Fecha     : {accion.fecha_evento or 'Sin fecha'}")
-    if accion.cantidad is not None:
-        print(f"Cantidad  : {accion.cantidad} {accion.unidad or ''}")
-    print(f"Prioridad : {accion.nivel} ({accion.prioridad}/100)")
-    print(f"\nAcción recomendada:\n{accion.accion_recomendada}")
-    print("\nMotivos:")
-    for motivo in accion.motivos:
-        print(f"- {motivo}")
-
-    print("\nHost AI:")
-    print("Esta recomendación combina urgencia, tipo de elaboración, cantidad y fecha del evento.")
-    print("En los próximos sprints se añadirá maquinaria, producción disponible y fases reales.\n")
-    input("Pulsa ENTER para volver...")
+def _siguiente_accion() -> None:
+    try:
+        from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+        plan = PlanificadorRestricciones()
+        tarea = plan.ordenar_tareas(plan.crear_tareas_demo())[0]
+        print("\nSIGUIENTE ACCIÓN RECOMENDADA")
+        print("=" * 60)
+        print(tarea.nombre)
+        print(f"Motivo: {plan.explicar_orden(tarea)}")
+    except Exception as e:
+        print(f"\nNo se pudo calcular la siguiente acción: {e}")
 
 
-def mostrar_prioridades(restaurante_id: int = 1):
-    print()
-    print(resumen_prioridades(restaurante_id, limite=20))
-    print("\nHost AI:")
-    print("Orden basado en urgencia, tiempo, reposo, cantidad y tipo de elaboración.\n")
-    input("Pulsa ENTER para volver...")
+def _ver_prioridades() -> None:
+    try:
+        from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+        plan = PlanificadorRestricciones()
+        print("\nPRIORIDADES DE PRODUCCIÓN")
+        print("=" * 60)
+        for i, tarea in enumerate(plan.ordenar_tareas(plan.crear_tareas_demo()), start=1):
+            print(f"{i}. {tarea.nombre} | puntos: {plan.puntuacion(tarea)}")
+            print(f"   {plan.explicar_orden(tarea)}")
+    except Exception as e:
+        print(f"\nNo se pudieron ver prioridades: {e}")
 
 
-def mostrar_dependencias(restaurante_id: int = 1):
-    print()
-    print(resumen_dependencias(restaurante_id))
-    print("\nHost AI:")
-    print("Esto todavía es una detección aproximada. Cuando conectemos platos con elaboraciones será exacta.\n")
-    input("Pulsa ENTER para volver...")
+def _ver_dependencias() -> None:
+    try:
+        from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+        plan = PlanificadorRestricciones()
+        print("\nDEPENDENCIAS / PRODUCCIONES AGRUPABLES")
+        print("=" * 60)
+        for tarea in plan.crear_tareas_demo():
+            deps = ", ".join(tarea.dependencias) if tarea.dependencias else "Sin dependencias"
+            desbloquea = ", ".join(tarea.desbloquea) if tarea.desbloquea else "No desbloquea otras"
+            print(f"\n- {tarea.nombre}")
+            print(f"  Depende de: {deps}")
+            print(f"  Desbloquea: {desbloquea}")
+    except Exception as e:
+        print(f"\nNo se pudieron ver dependencias: {e}")
 
 
-def mostrar_plan_inteligente(restaurante_id: int = 1):
-    print()
-    print(resumen_plan_produccion(restaurante_id))
-    print("\nHost AI:")
-    print("Este es el primer plan que mezcla prioridades y dependencias. Revísalo como jefe de cocina.\n")
-    input("Pulsa ENTER para volver...")
+def _plan_inteligente() -> None:
+    _ver_prioridades()
 
 
-def mostrar_horario_inteligente(restaurante_id: int = 1):
-    hora = input("\nHora de inicio (vacío = 08:00): ").strip() or "08:00"
-    print()
-    print(resumen_horario_produccion(restaurante_id, hora_inicio=hora))
-    print("\nHost AI:")
-    print("Este es el primer horario basado en prioridades, tiempos activos/pasivos y tipo de elaboración.\n")
-    input("Pulsa ENTER para volver...")
+def _horario_basico() -> None:
+    try:
+        from SERVICIOS.planificador_produccion import imprimir_horario_basico
+        imprimir_horario_basico()
+    except Exception as e:
+        print(f"\nNo se pudo generar el horario básico: {e}")
 
 
-def menu_produccion_inteligente(restaurante_id: int = 1):
+def _horario_restricciones() -> None:
+    try:
+        from SERVICIOS.planificador_restricciones import imprimir_horario_restricciones
+        imprimir_horario_restricciones()
+    except Exception as e:
+        print(f"\nNo se pudo generar el horario por restricciones: {e}")
+
+
+def menu_produccion_inteligente() -> None:
     while True:
-        print("\n========== PRODUCCIÓN INTELIGENTE ==========")
+        print("\n" + "=" * 60)
+        print("16. PRODUCCIÓN INTELIGENTE")
+        print("=" * 60)
         print("1. Ver siguiente acción recomendada")
         print("2. Ver prioridades de producción")
         print("3. Ver dependencias / producciones agrupables")
         print("4. Generar plan de producción inteligente")
         print("5. Generar horario de producción inteligente")
+        print("6. Generar horario por restricciones reales (Sprint 5.4)")
         print("0. Volver")
 
-        opcion = input("\n¿Qué quieres hacer? ").strip()
+        opcion = input("\nElige una opción: ").strip()
 
         if opcion == "1":
-            mostrar_siguiente_accion(restaurante_id)
+            _siguiente_accion()
+            _pausa()
         elif opcion == "2":
-            mostrar_prioridades(restaurante_id)
+            _ver_prioridades()
+            _pausa()
         elif opcion == "3":
-            mostrar_dependencias(restaurante_id)
+            _ver_dependencias()
+            _pausa()
         elif opcion == "4":
-            mostrar_plan_inteligente(restaurante_id)
+            _plan_inteligente()
+            _pausa()
         elif opcion == "5":
-            mostrar_horario_inteligente(restaurante_id)
+            _horario_basico()
+            _pausa()
+        elif opcion == "6":
+            _horario_restricciones()
+            _pausa()
         elif opcion == "0":
             break
         else:
-            print("\n⚠️ Opción no válida.")
+            print("Opción no válida.")
+
+
+# Alias por compatibilidad con nombres posibles usados en Main.py
+mostrar_menu = menu_produccion_inteligente
+menu = menu_produccion_inteligente
+
+
+if __name__ == "__main__":
+    menu_produccion_inteligente()

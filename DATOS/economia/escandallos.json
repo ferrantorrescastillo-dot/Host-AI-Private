@@ -1,0 +1,55 @@
+{
+  "ESC-CAR-001": {
+    "codigo": "ESC-CAR-001",
+    "nombre": "Carrillera melosa prensada",
+    "version": "1.0",
+    "rendimiento_final": 20,
+    "unidad_rendimiento": "raciones",
+    "raciones": 20,
+    "estado": "validado_demo",
+    "lineas": [
+      {
+        "codigo_articulo": "MAT-CAR-001",
+        "nombre": "Carrillera limpia",
+        "cantidad_bruta": 4.0,
+        "unidad": "kg",
+        "merma_porcentaje": 5
+      },
+      {
+        "codigo_articulo": "MAT-VER-001",
+        "nombre": "Cebolla",
+        "cantidad_bruta": 1.2,
+        "unidad": "kg",
+        "merma_porcentaje": 12
+      },
+      {
+        "codigo_articulo": "MAT-VER-002",
+        "nombre": "Zanahoria",
+        "cantidad_bruta": 0.8,
+        "unidad": "kg",
+        "merma_porcentaje": 10
+      },
+      {
+        "codigo_articulo": "MAT-VER-003",
+        "nombre": "Puerro",
+        "cantidad_bruta": 0.4,
+        "unidad": "kg",
+        "merma_porcentaje": 15
+      },
+      {
+        "codigo_articulo": "MAT-VIN-001",
+        "nombre": "Vino tinto cocina",
+        "cantidad_bruta": 0.75,
+        "unidad": "L",
+        "merma_porcentaje": 0
+      },
+      {
+        "codigo_articulo": "ELAB-FON-001",
+        "nombre": "Fondo oscuro",
+        "cantidad_bruta": 2.0,
+        "unidad": "L",
+        "merma_porcentaje": 0
+      }
+    ]
+  }
+}

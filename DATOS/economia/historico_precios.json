@@ -1,0 +1,56 @@
+[
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "MAT-CAR-001",
+    "nombre": "Carrillera limpia",
+    "precio_anterior": 9.5,
+    "precio_nuevo": 9.5,
+    "unidad": "kg",
+    "proveedor": "Proveedor Carne"
+  },
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "MAT-VER-001",
+    "nombre": "Cebolla",
+    "precio_anterior": 1.1,
+    "precio_nuevo": 1.1,
+    "unidad": "kg",
+    "proveedor": "Proveedor Verdura"
+  },
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "MAT-VER-002",
+    "nombre": "Zanahoria",
+    "precio_anterior": 0.95,
+    "precio_nuevo": 0.95,
+    "unidad": "kg",
+    "proveedor": "Proveedor Verdura"
+  },
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "MAT-VER-003",
+    "nombre": "Puerro",
+    "precio_anterior": 2.2,
+    "precio_nuevo": 2.2,
+    "unidad": "kg",
+    "proveedor": "Proveedor Verdura"
+  },
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "MAT-VIN-001",
+    "nombre": "Vino tinto cocina",
+    "precio_anterior": 2.4,
+    "precio_nuevo": 2.4,
+    "unidad": "L",
+    "proveedor": "Proveedor Bebidas"
+  },
+  {
+    "fecha": "2026-07-07",
+    "codigo_articulo": "ELAB-FON-001",
+    "nombre": "Fondo oscuro",
+    "precio_anterior": 0.0,
+    "precio_nuevo": 0.0,
+    "unidad": "L",
+    "proveedor": ""
+  }
+]

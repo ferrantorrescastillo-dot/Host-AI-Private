@@ -1,0 +1,13 @@
+[
+  {
+    "lote": "LOTE-20260707-001",
+    "codigo_articulo": "ELAB-CAR-001",
+    "nombre": "Carrillera melosa prensada",
+    "fecha_produccion": "2026-07-07",
+    "fecha_caducidad": "2026-07-12",
+    "responsable": "Ferran",
+    "cantidad_producida": 20.0,
+    "unidad": "raciones",
+    "origen_escandallo": "ESC-CAR-001"
+  }
+]

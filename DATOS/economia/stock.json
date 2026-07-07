@@ -1,0 +1,58 @@
+{
+  "MAT-CAR-001": {
+    "codigo_articulo": "MAT-CAR-001",
+    "nombre": "Carrillera limpia",
+    "cantidad": 6.0,
+    "unidad": "kg",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "MAT-VER-001": {
+    "codigo_articulo": "MAT-VER-001",
+    "nombre": "Cebolla",
+    "cantidad": 23.8,
+    "unidad": "kg",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "MAT-VER-002": {
+    "codigo_articulo": "MAT-VER-002",
+    "nombre": "Zanahoria",
+    "cantidad": 9.2,
+    "unidad": "kg",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "MAT-VER-003": {
+    "codigo_articulo": "MAT-VER-003",
+    "nombre": "Puerro",
+    "cantidad": 3.6,
+    "unidad": "kg",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "MAT-VIN-001": {
+    "codigo_articulo": "MAT-VIN-001",
+    "nombre": "Vino tinto cocina",
+    "cantidad": 3.75,
+    "unidad": "L",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "ELAB-FON-001": {
+    "codigo_articulo": "ELAB-FON-001",
+    "nombre": "Fondo oscuro",
+    "cantidad": 6.0,
+    "unidad": "L",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  },
+  "ELAB-CAR-001": {
+    "codigo_articulo": "ELAB-CAR-001",
+    "nombre": "Carrillera melosa prensada",
+    "cantidad": 20.0,
+    "unidad": "ración",
+    "ubicacion": "cámara/almacén",
+    "ultimo_movimiento": "2026-07-07"
+  }
+}

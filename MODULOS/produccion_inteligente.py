@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Módulo de consola - Producción Inteligente
-Sprint 5.6.2: planificación completa por trabajadores con tiempos pasivos.
+Sprint 6.0: conexión con fichas técnicas.
+
+Este archivo mantiene las opciones anteriores y añade:
+9. Generar producción desde ficha técnica
 """
+
 from __future__ import annotations
 
 
@@ -13,12 +17,15 @@ def _pausa() -> None:
 def _siguiente_accion() -> None:
     try:
         from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+
         plan = PlanificadorRestricciones()
         tarea = plan.ordenar_tareas(plan.crear_tareas_demo())[0]
+
         print("\nSIGUIENTE ACCIÓN RECOMENDADA")
         print("=" * 60)
         print(tarea.nombre)
         print(f"Motivo: {plan.explicar_orden(tarea)}")
+
     except Exception as e:
         print(f"\nNo se pudo calcular la siguiente acción: {e}")
 
@@ -26,12 +33,16 @@ def _siguiente_accion() -> None:
 def _ver_prioridades() -> None:
     try:
         from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+
         plan = PlanificadorRestricciones()
+
         print("\nPRIORIDADES DE PRODUCCIÓN")
         print("=" * 60)
+
         for i, tarea in enumerate(plan.ordenar_tareas(plan.crear_tareas_demo()), start=1):
             print(f"{i}. {tarea.nombre} | puntos: {plan.puntuacion(tarea)}")
             print(f"   {plan.explicar_orden(tarea)}")
+
     except Exception as e:
         print(f"\nNo se pudieron ver prioridades: {e}")
 
@@ -39,15 +50,20 @@ def _ver_prioridades() -> None:
 def _ver_dependencias() -> None:
     try:
         from SERVICIOS.planificador_restricciones import PlanificadorRestricciones
+
         plan = PlanificadorRestricciones()
+
         print("\nDEPENDENCIAS / PRODUCCIONES AGRUPABLES")
         print("=" * 60)
+
         for tarea in plan.crear_tareas_demo():
             deps = ", ".join(tarea.dependencias) if tarea.dependencias else "Sin dependencias"
             desbloquea = ", ".join(tarea.desbloquea) if tarea.desbloquea else "No desbloquea otras"
+
             print(f"\n- {tarea.nombre}")
             print(f"  Depende de: {deps}")
             print(f"  Desbloquea: {desbloquea}")
+
     except Exception as e:
         print(f"\nNo se pudieron ver dependencias: {e}")
 
@@ -59,7 +75,9 @@ def _plan_inteligente() -> None:
 def _horario_basico() -> None:
     try:
         from SERVICIOS.planificador_produccion import imprimir_horario_basico
+
         imprimir_horario_basico()
+
     except Exception as e:
         print(f"\nNo se pudo generar el horario básico: {e}")
 
@@ -67,25 +85,41 @@ def _horario_basico() -> None:
 def _horario_restricciones() -> None:
     try:
         from SERVICIOS.planificador_restricciones import imprimir_horario_restricciones
+
         imprimir_horario_restricciones()
+
     except Exception as e:
         print(f"\nNo se pudo generar el horario por restricciones: {e}")
 
 
-def _plan_personal() -> None:
+def _planificacion_personal() -> None:
     try:
         from SERVICIOS.planificador_personal import imprimir_planificacion_personal_completa
+
         imprimir_planificacion_personal_completa(numero_cocineros=3, horas_jornada=8)
+
     except Exception as e:
         print(f"\nNo se pudo generar la planificación por trabajadores: {e}")
 
 
-def _agenda_jefe() -> None:
+def _agenda_jefe_cocina() -> None:
     try:
         from SERVICIOS.agenda_jefe_cocina import imprimir_agenda_jefe_cocina
+
         imprimir_agenda_jefe_cocina()
+
     except Exception as e:
         print(f"\nNo se pudo generar la agenda del jefe de cocina: {e}")
+
+
+def _produccion_desde_ficha() -> None:
+    try:
+        from SERVICIOS.produccion_desde_fichas import menu_produccion_desde_fichas
+
+        menu_produccion_desde_fichas()
+
+    except Exception as e:
+        print(f"\nNo se pudo generar producción desde ficha técnica: {e}")
 
 
 def menu_produccion_inteligente() -> None:
@@ -99,30 +133,52 @@ def menu_produccion_inteligente() -> None:
         print("4. Generar plan de producción inteligente")
         print("5. Generar horario de producción inteligente")
         print("6. Generar horario por restricciones reales")
-        print("7. Planificación completa por 3 cocineros y tiempos pasivos")
+        print("7. Planificación por trabajadores")
         print("8. Agenda diaria del jefe de cocina")
+        print("9. Generar producción desde ficha técnica")
         print("0. Volver")
 
         opcion = input("\nElige una opción: ").strip()
 
         if opcion == "1":
-            _siguiente_accion(); _pausa()
+            _siguiente_accion()
+            _pausa()
+
         elif opcion == "2":
-            _ver_prioridades(); _pausa()
+            _ver_prioridades()
+            _pausa()
+
         elif opcion == "3":
-            _ver_dependencias(); _pausa()
+            _ver_dependencias()
+            _pausa()
+
         elif opcion == "4":
-            _plan_inteligente(); _pausa()
+            _plan_inteligente()
+            _pausa()
+
         elif opcion == "5":
-            _horario_basico(); _pausa()
+            _horario_basico()
+            _pausa()
+
         elif opcion == "6":
-            _horario_restricciones(); _pausa()
+            _horario_restricciones()
+            _pausa()
+
         elif opcion == "7":
-            _plan_personal(); _pausa()
+            _planificacion_personal()
+            _pausa()
+
         elif opcion == "8":
-            _agenda_jefe(); _pausa()
+            _agenda_jefe_cocina()
+            _pausa()
+
+        elif opcion == "9":
+            _produccion_desde_ficha()
+            _pausa()
+
         elif opcion == "0":
             break
+
         else:
             print("Opción no válida.")
 

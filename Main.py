@@ -9,6 +9,7 @@ sys.path.insert(0, str(BASE_DIR / "IA"))
 sys.path.insert(0, str(BASE_DIR / "IMPORTADORES"))
 sys.path.insert(0, str(BASE_DIR / "SERVICIOS"))
 sys.path.insert(0, str(BASE_DIR / "Legacy"))
+sys.path.insert(0, str(BASE_DIR / "MODELOS"))
 
 from database import crear_base_datos
 
@@ -38,6 +39,7 @@ from costes import menu_costes
 from compras import menu_compras
 from produccion_inteligente import menu_produccion_inteligente
 from asistente import conversar_con_host_ai
+from fichas import menu_fichas_tecnicas
 
 
 crear_base_datos()
@@ -50,7 +52,7 @@ restaurante_id = motor.get("restaurante_id", 1)
 
 while True:
     print("\n======================================")
-    print("             HOST AI 2.1 - Sprint 5.3")
+    print("             HOST AI 2.1 - Sprint 5.7")
     print("======================================")
     print(f"📦 Artículos cargados : {len(motor['articulos'])}")
     print(f"🏢 Proveedores        : {len(motor['proveedores'])}")
@@ -73,6 +75,7 @@ while True:
     print("14. Costes / Rentabilidad")
     print("15. Compras / Pedidos")
     print("16. Producción Inteligente")
+    print("17. Fichas Técnicas Host AI")
     print("0. Salir")
 
     opcion = input("\n¿Qué quieres hacer? ")
@@ -142,6 +145,9 @@ while True:
 
     elif opcion == "16":
         menu_produccion_inteligente()
+
+    elif opcion == "17":
+        menu_fichas_tecnicas(restaurante_id)
 
     elif opcion == "0":
         print("\nHost AI:")

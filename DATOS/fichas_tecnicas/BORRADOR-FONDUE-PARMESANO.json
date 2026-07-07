@@ -1,0 +1,71 @@
+{
+  "codigo": "BORRADOR-FONDUE-PARMESANO",
+  "nombre": "FONDUE PARMESANO",
+  "tipo": "elaboracion",
+  "familia": "aperitivos",
+  "version": "1.0",
+  "estado": "borrador_incompleto",
+  "objetivo": "bien cremosa y elastica",
+  "descripcion_corta": "",
+  "rendimiento_final": "unos 700ml",
+  "raciones": 3,
+  "peso_racion": "233.33",
+  "ingredientes": [
+    {
+      "nombre": "leche",
+      "cantidad": -250.0,
+      "unidad": "de",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "de sal",
+      "cantidad": -2.5,
+      "unidad": "g",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    }
+  ],
+  "fases": [],
+  "tiempo_total_min": 0,
+  "tiempo_activo_min": 0,
+  "tiempo_pasivo_min": 0,
+  "maquinaria_imprescindible": [
+    "microondas"
+  ],
+  "maquinaria_opcional": [],
+  "utensilios": [],
+  "producciones_previas": [],
+  "elaboraciones_que_desbloquea": [],
+  "puntos_criticos_haccp": [],
+  "controles_calidad": [
+    "cremosa y caliente"
+  ],
+  "errores_frecuentes": [],
+  "conservacion": "camara",
+  "vida_util": "15",
+  "congelacion": "",
+  "regeneracion": "Microondas",
+  "alergenos": [
+    "lacteos"
+  ],
+  "coste_materia_prima": null,
+  "coste_mano_obra": null,
+  "coste_total_estimado": null,
+  "coste_por_racion": null,
+  "notas_jefe_cocina": "Ficha generada desde texto. Requiere revisión.",
+  "preguntas_pendientes": [
+    "Puntos críticos HACCP",
+    "Proceso por fases",
+    "Tiempo activo",
+    "Tiempo total"
+  ]
+}

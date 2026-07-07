@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Módulo de consola - Producción Inteligente
-Sprint 5.4: planificación por restricciones reales.
+Sprint 5.6.2: planificación completa por trabajadores con tiempos pasivos.
 """
-
 from __future__ import annotations
 
 
@@ -73,6 +72,22 @@ def _horario_restricciones() -> None:
         print(f"\nNo se pudo generar el horario por restricciones: {e}")
 
 
+def _plan_personal() -> None:
+    try:
+        from SERVICIOS.planificador_personal import imprimir_planificacion_personal_completa
+        imprimir_planificacion_personal_completa(numero_cocineros=3, horas_jornada=8)
+    except Exception as e:
+        print(f"\nNo se pudo generar la planificación por trabajadores: {e}")
+
+
+def _agenda_jefe() -> None:
+    try:
+        from SERVICIOS.agenda_jefe_cocina import imprimir_agenda_jefe_cocina
+        imprimir_agenda_jefe_cocina()
+    except Exception as e:
+        print(f"\nNo se pudo generar la agenda del jefe de cocina: {e}")
+
+
 def menu_produccion_inteligente() -> None:
     while True:
         print("\n" + "=" * 60)
@@ -83,36 +98,35 @@ def menu_produccion_inteligente() -> None:
         print("3. Ver dependencias / producciones agrupables")
         print("4. Generar plan de producción inteligente")
         print("5. Generar horario de producción inteligente")
-        print("6. Generar horario por restricciones reales (Sprint 5.4)")
+        print("6. Generar horario por restricciones reales")
+        print("7. Planificación completa por 3 cocineros y tiempos pasivos")
+        print("8. Agenda diaria del jefe de cocina")
         print("0. Volver")
 
         opcion = input("\nElige una opción: ").strip()
 
         if opcion == "1":
-            _siguiente_accion()
-            _pausa()
+            _siguiente_accion(); _pausa()
         elif opcion == "2":
-            _ver_prioridades()
-            _pausa()
+            _ver_prioridades(); _pausa()
         elif opcion == "3":
-            _ver_dependencias()
-            _pausa()
+            _ver_dependencias(); _pausa()
         elif opcion == "4":
-            _plan_inteligente()
-            _pausa()
+            _plan_inteligente(); _pausa()
         elif opcion == "5":
-            _horario_basico()
-            _pausa()
+            _horario_basico(); _pausa()
         elif opcion == "6":
-            _horario_restricciones()
-            _pausa()
+            _horario_restricciones(); _pausa()
+        elif opcion == "7":
+            _plan_personal(); _pausa()
+        elif opcion == "8":
+            _agenda_jefe(); _pausa()
         elif opcion == "0":
             break
         else:
             print("Opción no válida.")
 
 
-# Alias por compatibilidad con nombres posibles usados en Main.py
 mostrar_menu = menu_produccion_inteligente
 menu = menu_produccion_inteligente
 

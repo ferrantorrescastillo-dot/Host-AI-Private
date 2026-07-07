@@ -1,0 +1,384 @@
+{
+  "codigo": "ELAB-CAR-001",
+  "nombre": "Carrillera melosa prensada con demi-glace",
+  "tipo": "elaboracion",
+  "familia": "Carnes / Braseados",
+  "version": "1.0",
+  "estado": "validada_demo",
+  "objetivo": "Obtener una carrillera melosa, limpia, prensada y porcionable, lista para regenerar en servicio con salsa demi-glace.",
+  "descripcion_corta": "Carrillera braseada lentamente, deshuesada, prensada, abatida y racionada.",
+  "rendimiento_final": "65-70% sobre peso limpio inicial",
+  "raciones": 20,
+  "peso_racion": "120-140 g",
+  "ingredientes": [
+    {
+      "nombre": "Carrillera limpia",
+      "cantidad": 4.0,
+      "unidad": "kg",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": true
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 1.2,
+      "unidad": "kg",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Zanahoria",
+      "cantidad": 0.8,
+      "unidad": "kg",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Puerro",
+      "cantidad": 0.4,
+      "unidad": "kg",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 0.08,
+      "unidad": "kg",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Vino tinto",
+      "cantidad": 0.75,
+      "unidad": "L",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [
+        "sulfitos"
+      ],
+      "es_critico": false
+    },
+    {
+      "nombre": "Fondo oscuro / demi-glace",
+      "cantidad": 2.0,
+      "unidad": "L",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": true
+    },
+    {
+      "nombre": "Laurel",
+      "cantidad": 2,
+      "unidad": "hojas",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Romero",
+      "cantidad": 1,
+      "unidad": "rama",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": 40,
+      "unidad": "g",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": 8,
+      "unidad": "g",
+      "merma_porcentaje": null,
+      "cantidad_neta": null,
+      "proveedor_preferente": "",
+      "coste_unitario": null,
+      "alergenos": [],
+      "es_critico": false
+    }
+  ],
+  "fases": [
+    {
+      "nombre": "Revisar y limpiar carrilleras",
+      "orden": 1,
+      "descripcion": "Retirar grasa dura, nervios e impurezas. Pesar limpio.",
+      "tiempo_activo_min": 40,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [],
+      "utensilios": [
+        "cuchillo",
+        "tabla",
+        "peso"
+      ],
+      "depende_de": [],
+      "desbloquea": [],
+      "punto_critico": "",
+      "control_calidad": "Piezas limpias.",
+      "tipo": "activa"
+    },
+    {
+      "nombre": "Cortar bresa",
+      "orden": 2,
+      "descripcion": "Cortar cebolla, zanahoria, puerro y ajo.",
+      "tiempo_activo_min": 25,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [],
+      "utensilios": [
+        "cuchillo",
+        "tabla",
+        "GN"
+      ],
+      "depende_de": [],
+      "desbloquea": [],
+      "punto_critico": "",
+      "control_calidad": "",
+      "tipo": "activa"
+    },
+    {
+      "nombre": "Marcar carrilleras",
+      "orden": 3,
+      "descripcion": "Marcar bien por todas las caras.",
+      "tiempo_activo_min": 35,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [
+        "fuego"
+      ],
+      "utensilios": [],
+      "depende_de": [],
+      "desbloquea": [],
+      "punto_critico": "No cocer la carne en su propio jugo.",
+      "control_calidad": "Color tostado uniforme.",
+      "tipo": "activa"
+    },
+    {
+      "nombre": "Sofreír bresa y desglasar",
+      "orden": 4,
+      "descripcion": "Sofreír bresa, desglasar con vino y reducir alcohol.",
+      "tiempo_activo_min": 30,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [
+        "fuego"
+      ],
+      "utensilios": [],
+      "depende_de": [],
+      "desbloquea": [],
+      "punto_critico": "Reducir bien el vino.",
+      "control_calidad": "",
+      "tipo": "activa"
+    },
+    {
+      "nombre": "Brasear carrilleras",
+      "orden": 5,
+      "descripcion": "Cubrir con fondo/demi-glace y brasear tapado hasta textura melosa.",
+      "tiempo_activo_min": 10,
+      "tiempo_pasivo_min": 180,
+      "temperatura": "",
+      "maquinaria": [
+        "horno"
+      ],
+      "utensilios": [],
+      "depende_de": [
+        "Marcar carrilleras",
+        "Sofreír bresa y desglasar"
+      ],
+      "desbloquea": [],
+      "punto_critico": "Cocción suave.",
+      "control_calidad": "La carne cede al pinchar.",
+      "tipo": "mixta"
+    },
+    {
+      "nombre": "Deshuesar y limpiar",
+      "orden": 6,
+      "descripcion": "Separar carne, retirar impurezas y reservar jugos.",
+      "tiempo_activo_min": 45,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [],
+      "utensilios": [],
+      "depende_de": [
+        "Brasear carrilleras"
+      ],
+      "desbloquea": [],
+      "punto_critico": "Trabajar templado.",
+      "control_calidad": "",
+      "tipo": "activa"
+    },
+    {
+      "nombre": "Colar y reducir salsa",
+      "orden": 7,
+      "descripcion": "Colar la salsa y reducir hasta textura napante.",
+      "tiempo_activo_min": 15,
+      "tiempo_pasivo_min": 45,
+      "temperatura": "",
+      "maquinaria": [
+        "fuego"
+      ],
+      "utensilios": [],
+      "depende_de": [
+        "Brasear carrilleras"
+      ],
+      "desbloquea": [],
+      "punto_critico": "",
+      "control_calidad": "Salsa brillante y sin grasa excesiva.",
+      "tipo": "mixta"
+    },
+    {
+      "nombre": "Prensar",
+      "orden": 8,
+      "descripcion": "Colocar carrillera en molde y prensar con peso.",
+      "tiempo_activo_min": 25,
+      "tiempo_pasivo_min": 720,
+      "temperatura": "",
+      "maquinaria": [],
+      "utensilios": [],
+      "depende_de": [
+        "Deshuesar y limpiar"
+      ],
+      "desbloquea": [],
+      "punto_critico": "Prensar mínimo una noche.",
+      "control_calidad": "",
+      "tipo": "mixta"
+    },
+    {
+      "nombre": "Abatir",
+      "orden": 9,
+      "descripcion": "Abatir rápidamente antes de cámara.",
+      "tiempo_activo_min": 10,
+      "tiempo_pasivo_min": 60,
+      "temperatura": "",
+      "maquinaria": [
+        "abatidor"
+      ],
+      "utensilios": [],
+      "depende_de": [
+        "Prensar"
+      ],
+      "desbloquea": [],
+      "punto_critico": "No meter caliente directo en cámara.",
+      "control_calidad": "",
+      "tipo": "mixta"
+    },
+    {
+      "nombre": "Porcionar, envasar, etiquetar y registrar",
+      "orden": 10,
+      "descripcion": "Cortar raciones, pesar, envasar y registrar.",
+      "tiempo_activo_min": 45,
+      "tiempo_pasivo_min": 0,
+      "temperatura": "",
+      "maquinaria": [],
+      "utensilios": [],
+      "depende_de": [
+        "Abatir"
+      ],
+      "desbloquea": [],
+      "punto_critico": "",
+      "control_calidad": "Ración limpia y peso correcto.",
+      "tipo": "cierre"
+    }
+  ],
+  "tiempo_total_min": 1285,
+  "tiempo_activo_min": 280,
+  "tiempo_pasivo_min": 1005,
+  "maquinaria_imprescindible": [
+    "horno",
+    "abatidor",
+    "cámara",
+    "fuego"
+  ],
+  "maquinaria_opcional": [
+    "roner",
+    "envasadora al vacío"
+  ],
+  "utensilios": [
+    "GN alta",
+    "colador fino",
+    "peso",
+    "film",
+    "molde/prensa"
+  ],
+  "producciones_previas": [
+    "Demi-glace o fondo oscuro"
+  ],
+  "elaboraciones_que_desbloquea": [
+    "Taco de carrillera",
+    "Lingote de carrillera",
+    "Canelón de carrillera",
+    "Croqueta de carrillera"
+  ],
+  "puntos_criticos_haccp": [
+    "Abatir antes de guardar en cámara.",
+    "No dejar enfriar a temperatura ambiente durante horas.",
+    "Etiquetar con fecha, lote, peso y responsable.",
+    "Regenerar sin hervir agresivamente."
+  ],
+  "controles_calidad": [
+    "Textura melosa.",
+    "Sabor profundo y equilibrado.",
+    "Salsa sin grasa excesiva.",
+    "Corte limpio tras prensado.",
+    "Peso de ración correcto."
+  ],
+  "errores_frecuentes": [
+    "No marcar bien la carne.",
+    "No reducir el vino.",
+    "Brasear demasiado fuerte.",
+    "No prensar suficiente tiempo.",
+    "Guardar sin abatir ni etiquetar."
+  ],
+  "conservacion": "En cámara a 0-3 ºC, envasada y etiquetada.",
+  "vida_util": "3-5 días en cámara si está abatida y manipulada correctamente.",
+  "congelacion": "Sí. Congelar porciones envasadas al vacío o en bolsas de 10 raciones.",
+  "regeneracion": "Regenerar suave con salsa a 65-70 ºC hasta centro caliente, sin hervir fuerte.",
+  "alergenos": [
+    "sulfitos si se usa vino",
+    "apio si lleva bresa con apio"
+  ],
+  "coste_materia_prima": null,
+  "coste_mano_obra": null,
+  "coste_total_estimado": null,
+  "coste_por_racion": null,
+  "notas_jefe_cocina": "Debe hacerse mínimo el día anterior si se quiere prensar bien.",
+  "preguntas_pendientes": []
+}
